@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Редактор переводов</title>
+</head>
+<body class="main app-window">
+
+<nav class="navbar navbar-win-dark">
+  <span class="navbar-text">Редактор переводов</span>
+  <div class="app-no-drag d-flex">
+    <button class="btn btn-dark app-minimize"><i class="bi bi-dash-lg"></i></button>
+    <button class="btn btn-dark app-resize"><i class="bi bi-fullscreen-exit"></i></button>
+    <button class="btn btn-dark app-close"><i class="bi bi-x-lg"></i></button>
+  </div>
+</nav>
+<div class="container-md">
+  <div class="app-search">
+    <div class="input-group input-group-sm flex-nowrap">
+      <input type="search" class="form-control" placeholder="Поиск"/>
+      <span class="input-group-text app-search-total d-none"></span>
+      <button class="btn btn-outline-secondary btn-search-prev" style="--bs-btn-border-color: var(--bs-border-color)">
+        <i class="bi bi-chevron-up"></i>
+      </button>
+      <button class="btn btn-outline-secondary btn-search-next" style="--bs-btn-border-color: var(--bs-border-color)">
+        <i class="bi bi-chevron-down"></i>
+      </button>
+    </div>
+  </div>
+  <main>
+    <form class="needs-validation form" novalidate>
+      <div class="app-table">
+        <div class="row app-table-head-row pt-2 pb-2">
+          <div class="col"></div>
+        </div>
+      </div>
+    </form>
+  </main>
+  <button type="button" class="btn btn-primary app-btn-add" title="Добавить файл переводов">
+    <i class="bi bi-plus-lg"></i>
+  </button>
+</div>
+
+<!-- TABLE HEADS TPL -->
+<template id="table-head-tpl">
+  <div class="col d-flex align-items-center">
+    <div class="col"><b class="table-head-label"></b></div>
+    <div class="col-auto">
+      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-three-dots-vertical"></i>
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <div role="button" class="dropdown-item download">Скачать</div>
+          <div role="button" class="dropdown-item remove">Удалить</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<!-- ROW TPL -->
+<template id="row-tpl">
+  <div class="row mb-2">
+    <label class="col col-form-label col-form-label-sm"></label>
+  </div>
+</template>
+
+<!-- COL TPL -->
+<template id="col-tpl">
+  <div class="col">
+    <label class="col-form-label-sm"></label>
+    <input type="hidden" name="" value="" class="form-control form-control-sm"/>
+  </div>
+</template>
+
+<template id="highlight-tpl">
+  <mark class="app-highlight"></mark>
+</template>
+</body>
+</html>
