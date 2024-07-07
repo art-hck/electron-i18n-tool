@@ -1,0 +1,54 @@
+.app-search {
+  position: sticky;
+  top: -12px;
+  z-index: 1;
+  background: #fff;
+  width: 100%;
+  left: -12px;
+  padding: 12px 12px 0;
+  margin: -12px -12px 0;
+  box-sizing: content-box;
+}
+
+main {
+  position: relative;
+  min-height: calc(100vh - 134px);
+
+  .app-table {
+    & > :first-child {
+      background: #fff;
+      position: sticky;
+      top: 31px;
+    }
+
+    & > .row {
+      flex-wrap: nowrap;
+      word-break: break-all;
+      min-width: fit-content;
+
+      &:nth-child(even) {
+        background: var(--bs-secondary-bg);
+      }
+
+      label:empty:before {
+        content: '<пусто>';
+        color: #ccc;
+        display: inline;
+      }
+
+      & > .col {
+        min-width: 300px;
+      }
+    }
+  }
+}
+
+.app-btn-add {
+  --bs-btn-border-radius: 50%;
+  --bs-btn-padding-x: 12px;
+  --bs-btn-padding-y: 6.5px;
+  --bs-btn-font-size: 22px;
+  position: sticky;
+  bottom: 0;
+  left: calc(100% - 48px);
+}
