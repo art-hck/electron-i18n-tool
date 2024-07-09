@@ -1,5 +1,6 @@
 import { domOperator } from "../utils/dom-operator";
 import { saveAsFile } from "../utils/save-as-file";
+import { eventEmitter } from "../utils/event-emitter";
 
 (function ($) {
   $(async () => {
@@ -90,6 +91,7 @@ import { saveAsFile } from "../utils/save-as-file";
 
         tableEl.appendChild(rowEl);
       });
+      eventEmitter.emit('render-complete');
     }
   });
 })(domOperator)
