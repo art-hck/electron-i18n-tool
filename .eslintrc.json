@@ -12,5 +12,26 @@
     "plugin:import/electron",
     "plugin:import/typescript"
   ],
-  "parser": "@typescript-eslint/parser"
+  "parser": "@typescript-eslint/parser",
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
+      ],
+      "rules": {
+        "max-lines": "error",
+        "max-lines-per-function": "error",
+        "no-alert": "error",
+        "no-console": "warn",
+        "eqeqeq": ["error"],
+        "no-empty": ["error", { "allowEmptyCatch": true }],
+        "prefer-object-spread": "error",
+        "@typescript-eslint/member-ordering": ["error", {"default": ["signature", "decorated-field", "field", "constructor", "method"]}],
+        "@typescript-eslint/explicit-module-boundary-types": ["warn"],
+        "@typescript-eslint/no-non-null-assertion": "off"
+      }
+    }
+  ]
 }
